@@ -1,0 +1,47 @@
+/*
+ * Program demonstrating dynamic memory allocation with pointers.
+ * Gets three integers from user, stores them in dynamic memory, and displays results.
+ */
+
+MAIN METHOD
+    // Declare three integer variables to hold user's numbers and three pointers
+    DECLARE int num1
+    DECLARE int num2
+    DECLARE int num3
+    DECLARE num1Pointer AS REFERENCE TO INTEGER
+    DECLARE num2Pointer AS REFERENCE TO INTEGER
+    DECLARE num3Pointer AS REFERENCE TO INTEGER
+                          
+    // Prompt user for first integer value
+    OUTPUT "Enter the first number: "
+    INPUT INTO num1
+
+    // Prompt user for second integer value
+    OUTPUT "Enter the second number: "
+    INPUT INTO num2
+
+    // Prompt user for third integer value
+    OUTPUT "Enter the third number: "
+    INPUT INTO num3
+
+    // Have pointers point to user's numbers
+    SET VALUE POINTED BY num1Pointer EQUAL TO num1
+    SET VALUE POINTED BY num2Pointer EQUAL TO num2
+    SET VALUE POINTED BY num3Pointer EQUAL TO num3
+
+    // Display contents of the variables and pointers
+    OUTPUT "The value for variable 'num1' is: " + num1 + NEWLINE
+    OUTPUT "The value for the pointer 'num1Pointer' is: " + VALUE REFERENCED BY num1Pointer + NEWLINE
+    OUTPUT "The value for variable 'num2' is: " + num2 + NEWLINE
+    OUTPUT "The value for the pointer 'num2Pointer' is: " + VALUE REFERENCED BY num2Pointer + NEWLINE
+    OUTPUT "The value for variable 'num3' is: " + num3 + NEWLINE
+    OUTPUT "The value for the pointer 'num3Pointer' is: " + VALUE REFERENCED BY num3Pointer + NEWLINE
+
+    // Release pointers from memory by using delete operator
+    DEALLOCATE num1Pointer
+    DEALLOCATE num2Pointer
+    DEALLOCATE num3Pointer
+
+    // Return statement
+    RETURN 0
+END METHOD

@@ -3,7 +3,7 @@
 // Author      : Nolan Hill
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Integer Pointers Program
 //============================================================================
 
 #include <iostream>
@@ -19,7 +19,6 @@ int main() {
 	int* num1Pointer = new int;
 	int* num2Pointer = new int;
 	int* num3Pointer = new int;
-
 
 	// Prompt user for first integer value
 	cout << "Enter the first number: ";
